@@ -9,10 +9,10 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-// import package here
-import DeviceNumber from 'react-native-device-number';
-
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
+
+// ReactNativeDeviceNumber
+import ReactNativeDeviceNumber from './src/ReactNativeDeviceNumber';
 
 export const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,20 +21,8 @@ export const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  useEffect(() => {
-  
-    // call this one wherever you want...::::::::::
-    DeviceNumber.get().then(res => {
-      console.log(res);
-    });
-    
-  
-  
-  }, []);
-
   return (
     <SafeAreaView style={backgroundStyle}>
-
       {/* ONLY FOR SHOW CASE :::::: */}
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
@@ -50,6 +38,10 @@ export const App = () => {
               <Text style={styles.text}>SUBSCRIBEE</Text>
             </TouchableOpacity>
           </View>
+
+          {/* TODO: TODO: */}
+          {/* ReactNativeDeviceNumber */}
+          <ReactNativeDeviceNumber />
         </View>
       </ScrollView>
     </SafeAreaView>
